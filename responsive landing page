@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Landing Page</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background: #f4f4f4;
+        }
+
+        /* NAVBAR */
+        nav {
+            width: 100%;
+            position: fixed;
+            top: 0;
+            left: 0;
+            padding: 18px 10%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: transparent;
+            transition: 0.4s;
+            z-index: 1000;
+        }
+
+        nav.scrolled {
+            background: #1a1a1a;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+        }
+
+        nav .logo {
+            font-size: 26px;
+            font-weight: bold;
+            color: #fff;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+        }
+
+        nav ul li {
+            margin-left: 25px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            font-size: 18px;
+            color: white;
+            padding: 6px 10px;
+            transition: 0.3s;
+        }
+
+        nav ul li a:hover {
+            background: #ff6b6b;
+            border-radius: 5px;
+        }
+
+        /* HOME SECTION */
+        .hero {
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #fff;
+            background: linear-gradient(to right, #141e30, #243b55);
+            text-align: center;
+            padding: 0 10%;
+        }
+
+        .hero h1 {
+            font-size: 50px;
+            margin-bottom: 15px;
+        }
+
+        .hero p {
+            font-size: 22px;
+            margin-bottom: 20px;
+        }
+
+        .btn {
+            background: #ff6b6b;
+            padding: 12px 25px;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 6px;
+            transition: 0.3s;
+        }
+
+        .btn:hover {
+            background: #ff4c4c;
+        }
+
+        /* SERVICES SECTION */
+        .section {
+            padding: 80px 10%;
+            text-align: center;
+        }
+
+        .section h2 {
+            font-size: 36px;
+            margin-bottom: 30px;
+        }
+
+        .services {
+            display: flex;
+            gap: 25px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .card {
+            width: 280px;
+            background: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            transition: 0.3s;
+            box-shadow: 0 0 15px rgba(0,0,0,0.1);
+        }
+
+        .card:hover {
+            transform: translateY(-8px);
+        }
+
+        /* FOOTER */
+        footer {
+            background: #1a1a1a;
+            color: #fff;
+            text-align: center;
+            padding: 20px;
+            margin-top: 30px;
+        }
+
+        /* RESPONSIVE */
+        @media (max-width: 768px) {
+            nav ul {
+                display: none;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- NAVBAR -->
+    <nav id="navbar">
+        <div class="logo">SkillCraft</div>
+
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- HERO SECTION -->
+    <section class="hero" id="home">
+        <div>
+            <h1>Welcome to Our Landing Page</h1>
+            <p>Experience smooth navigation and beautiful UI.</p>
+            <a href="#services" class="btn">Explore More</a>
+        </div>
+    </section>
+
+    <!-- SERVICES -->
+    <section class="section" id="services">
+        <h2>Our Services</h2>
+
+        <div class="services">
+            <div class="card">Web Design</div>
+            <div class="card">Development</div>
+            <div class="card">Branding</div>
+        </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section class="section" id="contact">
+        <h2>Contact Us</h2>
+        <p>Email: support@example.com</p>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        © 2025 SkillCraft Technology
+    </footer>
+
+    <!-- JAVASCRIPT -->
+    <script>
+        const navbar = document.getElementById("navbar");
+
+        window.addEventListener("scroll", () => {
+            if (window.scrollY > 50) {
+                navbar.classList.add("scrolled");
+            } else {
+                navbar.classList.remove("scrolled");
+            }
+        });
+    </script>
+
+</body>
+</html>
